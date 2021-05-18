@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+
+<h1>You need to sign up</h1>
+
+<form action="{% url 'insert_Apartment_info' %}"  method="POST" autocomplete="off">
+
+    {% csrf_token %}
+    Flat Number: <input type="text"  name="FlatNumber"><br>
+    Enter your Building Name : <input type="text"  name="BuildingName"><br>
+    Enter your Building Number : <input type="text"  name="BuildingNumber"><br>
+    Enter your Building Address: <input type="text"  name="BuildingAddress"><br>
+    Flat Size: <input type="text"  name="FlatSize"><br>
+    Number Of Beds: <input type="text"  name="NumOfBeds"><br>
+    Number Of Toilet: <input type="text"  name="NumOfToilet"><br>
+    Number Of Balcony: <input type="text"  name="NumOfBalcony"><br>
+    Map Address: <input type="text"  name="MapAddress"><br>
+    Location: <input type="text"  name="Location"><br>
+    <input type="submit">
+
+</form>
+
+{%endblock%}

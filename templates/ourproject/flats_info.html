@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+
+<form action="{% url 'show_flats' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="location" >
+    <!-- <select name="location">
+        <option selected disabled=true>-- select location --</option>
+        <option>Khulshi</option>
+        <option>Dhanmondi</option>
+    </select> -->
+    <input type="Submit" value="Search">
+
+
+
+</form>
+
+
+<h1>All flats are shown below :</h1>
+    
+<div class="container info-boxes pt100 pb100">
+    
+    {% for flat in Flats %}
+        <p>{{ flat.flat_number }}<span>&#44;</span> {{ flat.building_name }}<span>&#44;</span> {{ flat.building_address }}</p>
+        <!-- <p>{{ flat.building_name }}</p>
+        <p>{{ flat.building_address }}</p> -->
+
+
+    {% endfor %}
+
+
+
+
+
+
+
+{%endblock%}

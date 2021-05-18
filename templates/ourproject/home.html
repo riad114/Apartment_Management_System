@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+
+<h1>You need to sign up</h1>
+
+<form action="{% url 'insert_user_info' %}"  method="POST" autocomplete="off">
+
+    {% csrf_token %}
+
+    Enter your First Name : <input type="text"  name="FirstName"><br>
+    Enter your Last Name : <input type="text"  name="LastName"><br>
+    Enter your Phone Number : <input type="text"  name="PhoneNumber"><br>
+    User Type(Owner/Renter) : <input type="text"  name="UserType"><br>
+    <input type="submit">
+
+</form>
+
+{%endblock%}
